@@ -1,20 +1,20 @@
-package DAO;
+package melomanab.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+// import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import domaine.Client;
+import melomanab.domaine.Client;
 
-public class ClientDao {
+public class DaoClient {
 	
 	ConnexionMySql con;
 	Connection maConexion;
 	
-	public ClientDao() {
+	public DaoClient() {
 		super();
 		this.con = new ConnexionMySql();
 		this.maConexion =con.getConnexionMySQL("bdd");
@@ -172,7 +172,7 @@ public class ClientDao {
 
 			// 5 --Exploit resSet
 			// Parcourir ligne après ligne (1 ligne= 1 enregistrement)
-			for (int i = 0; resSet.next(); i++) {
+			while (resSet.next()) {
 
 				int currentIDClient = resSet.getInt("idClient");
 				String currentNom = resSet.getString("nom");

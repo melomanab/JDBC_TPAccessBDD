@@ -1,4 +1,4 @@
-package domaine;
+package melomanab.domaine;
 
 public class Client {
 
